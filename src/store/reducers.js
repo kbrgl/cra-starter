@@ -12,7 +12,7 @@ function app(state = initialState, action) {
       }
     case DECREMENT:
       return {
-        counter: state.counter - 1,
+        counter: state.counter - 1 < 0 ? 0 : state.counter - 1,
       }
     default:
       return state
