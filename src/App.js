@@ -1,16 +1,19 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import Home from './pages/Home'
 import configureStore from './store'
 
-const { store } = configureStore()
+const { store, persistor } = configureStore()
 
 const App = () => (
   <Provider store={store}>
-    <Router>
-      <Home path="/" />
-    </Router>
+    <PersistGate loading={null} persistor={persistor}>
+      <Router>
+        <Home path="/" />
+      </Router>
+    </PersistGate>
   </Provider>
 )
 
