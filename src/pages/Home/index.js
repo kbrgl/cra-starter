@@ -3,13 +3,22 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { increment, decrement } from '../../store/actions'
 
+import styles from './styles.module.css'
+
 const Home = ({ counter, increment, decrement }) => (
-  <div>
-    <button type="button" onClick={decrement}>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+    }}
+  >
+    <button type="button" onClick={decrement} className={styles.button}>
       -
     </button>
-    {counter}
-    <button type="button" onClick={increment}>
+    <div className={styles.text}>{counter}</div>
+    <button type="button" onClick={increment} className={styles.button}>
       +
     </button>
   </div>
@@ -32,7 +41,4 @@ const mapDispatchToProps = dispatch => ({
   },
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

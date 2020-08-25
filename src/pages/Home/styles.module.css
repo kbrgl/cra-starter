@@ -1,0 +1,14 @@
+.button {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border: 1px solid #eaeaef;
+  border-radius: 3px;
+  font-size: 3rem;
+}
+
+.text {
+  font-size: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
